@@ -1,0 +1,7 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cf-sms",
+  "main": "src/index.js",
+  "compatibility_date": "2026-11-13",
+  "observability": { "enabled": true }
+}
