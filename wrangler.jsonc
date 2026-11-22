@@ -3,5 +3,9 @@
   "name": "cf-sms",
   "main": "src/index.js",
   "compatibility_date": "2026-11-13",
-  "observability": { "enabled": true }
+  "observability": { "enabled": true },
+  // Every 5 minutes: run the backend jobs Vercel Hobby can't schedule (see src/index.js).
+  "triggers": { "crons": ["*/5 * * * *"] },
+  // CRON_SECRET is a Worker secret (wrangler secret put CRON_SECRET), same value as the backend's.
+  "vars": { "API_BASE": "https://reportude-api.vercel.app" }
 }
